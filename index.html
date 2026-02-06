@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffe6eb;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    #box {
+        width: 320px;
+        padding: 25px;
+        background: white;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        position: relative;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #yes {
+        background: #ff4d6d;
+        color: white;
+        margin-right: 10px;
+    }
+
+    #no {
+        background: #ccc;
+        position: absolute;
+    }
+
+    #result {
+        display: none;
+        text-align: center;
+    }
+
+    #result img {
+        width: 250px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+</style>
+</head>
+<body>
+
+<div id="box">
+    <h1>Will you be my Valentine?</h1>
+    <button id="yes">YES</button>
+    <button id="no">NO</button>
+</div>
+
+<div id="result">
+    <img src="ourphoto.jpg" alt="Us together">
+    <h1>Be my Valentine, Jackilyn my love ❤️</h1>
+</div>
+
+<script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const box = document.getElementById("box");
+    const result = document.getElementById("result");
+
+    noBtn.addEventListener("click", () => {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+        box.style.display = "none";
+        result.style.display = "block";
+    });
+</script>
+
+</body>
+  </html>
+  
